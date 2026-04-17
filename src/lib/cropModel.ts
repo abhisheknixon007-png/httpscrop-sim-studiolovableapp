@@ -1,7 +1,10 @@
 // Lightweight SIMPLE-style crop yield + economics + Monte Carlo model.
 // Inspired by Zhao et al. 2019 SIMPLE crop model patterns. Heuristic, not validated.
 
-export type RegionKey = "hyderabad" | "iowa" | "nairobi";
+export type RegionKey =
+  | "hyderabad" | "ludhiana" | "pune" | "jaipur" | "lucknow"
+  | "bhopal" | "bengaluru" | "kolkata" | "patna" | "ahmedabad" | "guwahati"
+  | "iowa" | "nairobi";
 export type CropKey = "rice" | "wheat" | "maize" | "soybean" | "sorghum";
 
 export interface Region {
@@ -31,9 +34,19 @@ export interface Crop {
 }
 
 export const REGIONS: Region[] = [
-  { key: "hyderabad", label: "Hyderabad, Telangana", avgTemp: 27, avgRain: 800, radiation: 19, seasonDays: 130, costPerHa: 514, currency: "$" },
-  { key: "iowa", label: "Des Moines, Iowa", avgTemp: 22, avgRain: 620, radiation: 21, seasonDays: 140, costPerHa: 880, currency: "$" },
-  { key: "nairobi", label: "Nairobi, Kenya", avgTemp: 20, avgRain: 700, radiation: 20, seasonDays: 120, costPerHa: 320, currency: "$" },
+  { key: "hyderabad", label: "Hyderabad, Telangana", avgTemp: 27, avgRain: 800,  radiation: 19, seasonDays: 130, costPerHa: 514, currency: "$" },
+  { key: "ludhiana",  label: "Ludhiana, Punjab",     avgTemp: 24, avgRain: 700,  radiation: 20, seasonDays: 140, costPerHa: 560, currency: "$" },
+  { key: "pune",      label: "Pune, Maharashtra",    avgTemp: 25, avgRain: 720,  radiation: 20, seasonDays: 130, costPerHa: 500, currency: "$" },
+  { key: "jaipur",    label: "Jaipur, Rajasthan",    avgTemp: 26, avgRain: 550,  radiation: 21, seasonDays: 120, costPerHa: 470, currency: "$" },
+  { key: "lucknow",   label: "Lucknow, Uttar Pradesh", avgTemp: 26, avgRain: 900, radiation: 19, seasonDays: 135, costPerHa: 520, currency: "$" },
+  { key: "bhopal",    label: "Bhopal, Madhya Pradesh", avgTemp: 25, avgRain: 1100, radiation: 19, seasonDays: 130, costPerHa: 490, currency: "$" },
+  { key: "bengaluru", label: "Bengaluru, Karnataka", avgTemp: 23, avgRain: 970,  radiation: 20, seasonDays: 130, costPerHa: 530, currency: "$" },
+  { key: "kolkata",   label: "Kolkata, West Bengal", avgTemp: 27, avgRain: 1700, radiation: 18, seasonDays: 130, costPerHa: 510, currency: "$" },
+  { key: "patna",     label: "Patna, Bihar",         avgTemp: 26, avgRain: 1100, radiation: 18, seasonDays: 130, costPerHa: 460, currency: "$" },
+  { key: "ahmedabad", label: "Ahmedabad, Gujarat",   avgTemp: 27, avgRain: 800,  radiation: 21, seasonDays: 125, costPerHa: 510, currency: "$" },
+  { key: "guwahati",  label: "Guwahati, Assam",      avgTemp: 24, avgRain: 1700, radiation: 17, seasonDays: 135, costPerHa: 440, currency: "$" },
+  { key: "iowa",      label: "Des Moines, Iowa",     avgTemp: 22, avgRain: 620,  radiation: 21, seasonDays: 140, costPerHa: 880, currency: "$" },
+  { key: "nairobi",   label: "Nairobi, Kenya",       avgTemp: 20, avgRain: 700,  radiation: 20, seasonDays: 120, costPerHa: 320, currency: "$" },
 ];
 
 export const CROPS: Crop[] = [
