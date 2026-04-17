@@ -13,7 +13,19 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        serif: ["Fraunces", "Georgia", "serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+      },
       colors: {
+        forest: "hsl(var(--forest))",
+        "forest-soft": "hsl(var(--forest-soft))",
+        cream: "hsl(var(--cream))",
+        sand: "hsl(var(--sand))",
+        amber: "hsl(var(--amber))",
+        "amber-soft": "hsl(var(--amber-soft))",
+        harvest: "hsl(var(--harvest))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -22,6 +34,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

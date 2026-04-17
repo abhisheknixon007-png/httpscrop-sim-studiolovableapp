@@ -1,16 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { ModelSection } from "@/components/site/ModelSection";
+import { AIScout } from "@/components/site/AIScout";
+import { Simulator } from "@/components/site/Simulator";
+import { Footer } from "@/components/site/Footer";
+import { useEffect } from "react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useEffect(() => {
+    document.title = "CropSim — Simulate the harvest before a seed is sown";
+    const desc = "AI-powered crop yield, cost, profit, and weather risk simulator for India, US Midwest, and African smallholder regions.";
+    let m = document.querySelector('meta[name="description"]');
+    if (!m) { m = document.createElement("meta"); m.setAttribute("name", "description"); document.head.appendChild(m); }
+    m.setAttribute("content", desc);
+  }, []);
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main>
+      <Nav />
+      <Hero />
+      <ModelSection />
+      <AIScout />
+      <Simulator />
+      <Footer />
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
