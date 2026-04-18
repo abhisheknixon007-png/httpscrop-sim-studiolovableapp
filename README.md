@@ -1,9 +1,3 @@
-# Welcome to your Lovable project
-# Welcome to your Lovable project
-
-TODO: Document your project here
-
-TODO: Document your project here
 # 🌾 AgriSim: AI-Powered Crop & Farming Simulator
 
 ## 📌 Problem
